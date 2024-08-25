@@ -1,0 +1,15 @@
+name: Matrix run test
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: 
+  [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14, 16]
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
