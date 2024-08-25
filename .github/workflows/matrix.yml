@@ -1,7 +1,9 @@
 name: Matrix run test
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
-  [push]
+  #[push]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:

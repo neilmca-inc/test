@@ -1,0 +1,12 @@
+name: Call Reusable Workflow
+
+on:
+  [push]
+
+jobs:
+  run-template:
+    uses: neil.mcalister@incited.com/test-template/template.yml@v1.0.0
+    #with:
+    #  example-input: 'Hello, world!'
+    #secrets:
+    #  EXAMPLE_SECRET: ${{ secrets.EXAMPLE_SECRET }}
