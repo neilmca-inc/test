@@ -18,6 +18,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
   Explore-GitHub-Actions-Part2:
+    needs: Explore-GitHub-Actions
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -33,7 +34,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
   Explore-GitHub-Actions-Part2-to-Part3:
-    needs: Explore-GitHub-Actions-Part2
+    needs: Explore-GitHub-Actions    
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
