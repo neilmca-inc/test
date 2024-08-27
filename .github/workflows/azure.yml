@@ -19,10 +19,10 @@ jobs:
           az group show --name "rg-sbx-neilm-02"
           # You can write your Azure CLI inline scripts here.
 
-    - name: Azure PowerShell action
-      uses: azure/powershell@v2
-      with:
-        azPSVersion: latest
-        inlineScript: |
-          Get-AzResourceGroup -Name "rg-sbx-neilm-02"
+    #- name: Azure PowerShell action
+    #  uses: azure/powershell@v2
+    #  with:
+    #    azPSVersion: latest
+    #    inlineScript: |
+    #      Get-AzResourceGroup -Name "rg-sbx-neilm-02"
           # You can write your Azure PowerShell inline scripts here
