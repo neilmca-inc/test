@@ -1,0 +1,28 @@
+name: Run Azure Login with the Service Principal secret
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Azure Login action
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        enable-AzPSSession: true
+    
+    - name: Azure CLI script
+      uses: azure/cli@v2
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az group show --name "rg-sbx-neilm-02"
+          # You can write your Azure CLI inline scripts here.
+
+    - name: Azure PowerShell action
+      uses: azure/powershell@v2
+      with:
+        azPSVersion: latest
+        inlineScript: |
+          Get-AzResourceGroup -Name "rg-sbx-neilm-02"
+          # You can write your Azure PowerShell inline scripts here
